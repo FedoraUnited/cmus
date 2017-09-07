@@ -49,7 +49,7 @@ Small, fast and powerful console music player for Unix-like operating systems.
 %make_build V=2
 
 %install
-%make_install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 mv %{buildroot}%{_docdir}/%{name}/examples .
 
