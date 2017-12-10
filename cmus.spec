@@ -1,6 +1,6 @@
 Name:           cmus
-Version:        2.7.1
-Release:        6%{?dist}
+Version:        2.8.0
+Release:        2%{?dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
@@ -69,6 +69,10 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+
+* Sun Dec 10 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-2
+- Updated to 2.8.0
+
 * Sun Jun 26 2016 The UnitedRPMs Project (Key for UnitedRPMs infrastructure) <unitedrpms@protonmail.com> - 2.7.1-6
 - Rebuild with new ffmpeg
 
