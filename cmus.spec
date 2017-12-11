@@ -1,11 +1,15 @@
+%global commit0 cbaf983034c47c05ad5e9588b756d1a71626c7e7
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global gver .git%{shortcommit0}
+
 Name:           cmus
 Version:        2.8.0
-Release:        2%{?dist}
+Release:        2%{?gver}%{dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
 URL:            https://cmus.github.io/
-Source0:        https://github.com/%{name}/%{name}/archive/v%{version}.tar.gz
+Source0:        https://github.com/%{name}/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  pkgconfig(ao)
 BuildRequires:  pkgconfig(alsa)
@@ -33,7 +37,7 @@ BuildRequires:  pkgconfig(wavpack)
 Small, fast and powerful console music player for Unix-like operating systems.
                                                                              
 %prep
-%setup -q
+%autosetup -n %{name}-%{commit0}  
 
 %build
 ./configure \
@@ -70,8 +74,8 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 
 %changelog
 
-* Sun Dec 10 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-2
-- Updated to 2.8.0
+* Sun Dec 10 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-2.gitcbaf983
+- Updated to 2.8.0-2.gitcbaf983
 
 * Sun Jun 26 2016 The UnitedRPMs Project (Key for UnitedRPMs infrastructure) <unitedrpms@protonmail.com> - 2.7.1-6
 - Rebuild with new ffmpeg
