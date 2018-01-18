@@ -1,10 +1,10 @@
-%global commit0 cbaf983034c47c05ad5e9588b756d1a71626c7e7
+%global commit0 15b5c5b538a1a07cb7705f742407052304dd7dde
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           cmus
 Version:        2.8.0
-Release:        2%{?gver}%{dist}
+Release:        3%{?gver}%{dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
@@ -73,6 +73,9 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+
+* Thu Jan 18 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-3.git15b5c5b
+- Updated to 2.8.0-3.git15b5c5b
 
 * Sun Dec 10 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-2.gitcbaf983
 - Updated to 2.8.0-2.gitcbaf983
