@@ -1,20 +1,20 @@
-%global commit0 15b5c5b538a1a07cb7705f742407052304dd7dde
+%global commit0 354625c5a229111ecb68457c4238aa6b9a1d9ebe
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           cmus
 Version:        2.8.0
-Release:        3%{?gver}%{dist}
+Release:        7%{?gver}%{dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
 URL:            https://cmus.github.io/
-Source0:        https://github.com/%{name}/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/cmus/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  pkgconfig(ao)
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(flac)
-BuildRequires:  faad2-devel
+BuildRequires:  faad2-devel >= 2.9.1
 BuildRequires:  pkgconfig(jack)
 BuildRequires:  pkgconfig(libavformat)
 BuildRequires:  pkgconfig(libcddb)
@@ -73,6 +73,10 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+
+* Sat Nov 09 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-7.git354625c
+- Updated to current commit
+- Rebuilt for faad2
 
 * Thu Jan 18 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-3.git15b5c5b
 - Updated to 2.8.0-3.git15b5c5b
