@@ -1,15 +1,15 @@
-%global commit0 354625c5a229111ecb68457c4238aa6b9a1d9ebe
+%global commit0 9f0833886e76c52bb9f30861c72972ec25f82585
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           cmus
-Version:        2.8.0
+Version:        2.9.1
 Release:        7%{?gver}%{dist}
 Summary:        Ncurses-Based Music Player
 
 License:        GPLv2+
 URL:            https://cmus.github.io/
-Source0:        https://github.com/cmus/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/cmus/cmus/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  pkgconfig(ao)
 BuildRequires:  pkgconfig(alsa)
@@ -50,7 +50,7 @@ Small, fast and powerful console music player for Unix-like operating systems.
         CONFIG_ARTS=n \
         CONFIG_SUN=n
 
-%make_build V=2
+%make_build V=1
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
@@ -73,6 +73,9 @@ install -pm 0644 contrib/%{name}.bash-completion %{buildroot}%{_sysconfdir}/bash
 %{_mandir}/man7/%{name}-tutorial.7.*
 
 %changelog
+
+* Sun Jan 24 2021 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.9.1-7.git9f08338
+- Updated to 2.9.1
 
 * Sat Nov 09 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 2.8.0-7.git354625c
 - Updated to current commit
